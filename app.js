@@ -17,7 +17,8 @@ var authenticate = require('./routes/authenticate')(passport);
 var app = express();
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost:27017/book');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/book');
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
