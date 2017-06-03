@@ -76,3 +76,7 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
+app.listen(process.env.PORT || 8080, function(err){
+  if(err) console.error(err);
+  console.log("start server at 8080");
+})
